@@ -7,7 +7,7 @@ echo Please wait for installing...
 sudo apt update -y > /dev/null 2>&1
 echo "Installing QEMU (2-3m)..."
 sudo apt install qemu-system-x86 curl -y > /dev/null 2>&1
-echo Downloading Windows Disk...
+echo Downloading Android...
 curl -L -o androidq.qcow2 https://app.vagrantup.com/thuonghai2711/boxes/AndroidQCOW2/versions/1.0.0/providers/qemu.box
 echo "Android On Google Colab"
 echo Your VNC IP Address:
@@ -15,5 +15,5 @@ curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*publ
 echo "Note: Use Right-Click Or Ctrl+C To Copy"
 echo "Please Keep Colab Tab Open, Maximum Time 12h"
 echo Script by OS TEAM @KLF
-sudo qemu-system-x86_64 -vnc :0 -hda lite10.qcow2  -smp cores=2  -m 8192M -machine usb=on -device usb-tablet > /dev/null 2>&1
+sudo qemu-system-x86_64 -vnc :0 -hda androidq.qcow2  -smp cores=2  -m 8192M -machine usb=on -device usb-tablet > /dev/null 2>&1
 
